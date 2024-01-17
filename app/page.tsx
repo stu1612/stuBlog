@@ -1,11 +1,22 @@
-import { Button } from "@/components/ui/button";
+import { getClient } from "@/lib/apollo/client";
+import { GET_FEATURED_BLOGS } from "@/lib/services";
 
-export default function Home() {
+const query = GET_FEATURED_BLOGS;
+
+export default async function Home() {
+  const { data } = await getClient().query({
+    query,
+    context: {
+      fetchOptions: {
+        next: { revalidate: 5 },
+      },
+    },
+  });
+
+  console.log(data);
   return (
     <div>
-      <Button variant="secondary" className="px-12">
-        Click me
-      </Button>
+      <h1>hello</h1>
     </div>
   );
 }
