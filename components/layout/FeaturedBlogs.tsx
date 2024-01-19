@@ -8,7 +8,6 @@ type DataProps = {
 };
 
 export default function FeaturedBlogs({ data }: DataProps) {
-  console.log(data);
   return data?.posts?.map((blog: Blog) => (
     <BlogCard blog={blog} key={blog?.id} />
   ));

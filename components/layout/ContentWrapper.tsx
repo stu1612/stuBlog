@@ -1,3 +1,5 @@
+import Projects from "./Projects";
+
 export default function ContentWrapper({
   children,
 }: {
@@ -6,7 +8,10 @@ export default function ContentWrapper({
   return (
     <section className="h-auto">
       <div className="md:my-10 lg:my-20">
-        <div className="grid-container  lg:gap-20">{children}</div>
+        <div className="grid-container  lg:gap-20">
+          {children}
+          <Projects />
+        </div>
       </div>
     </section>
   );
