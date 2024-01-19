@@ -1,5 +1,3 @@
-import React from "react";
-
-export default function BlogPage() {
+export default async function BlogPage() {
   return <div>BlogPage</div>;
 }
