@@ -1,3 +1,4 @@
+// files
 import { getClient } from "@/lib/apollo/client";
 import { GET_FEATURED_BLOGS } from "@/lib/services";
 
@@ -14,9 +15,5 @@ export default async function Home() {
   });
 
   console.log(data);
-  return (
-    <div>
-      <h1>hello</h1>
-    </div>
-  );
+  return <div>Hello</div>;
 }
