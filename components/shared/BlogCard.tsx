@@ -1,5 +1,11 @@
+// npm
 import Image from "next/image";
 import Link from "next/link";
+
+// files
+import { truncateString } from "@/lib/utils";
+import { formatDate } from "@/lib/utils";
+
 import { Blog } from "@/types";
 
 export default function BlogCard({ blog }: { blog: Blog }) {
@@ -19,15 +25,11 @@ export default function BlogCard({ blog }: { blog: Blog }) {
           </figure>
           <div className="flex-evenly-start flex-col px-5 py-10 sm:px-6 lg:px-12 lg:on-hover">
             <p className="p-medium-12">
-              {/* <BlogCreatedAt createdAt={blog?.createdAt} /> -{" "} */}
-              <span>{blog?.categories[0].name}</span>
+              <span>{formatDate(blog?.createdAt)} - </span>
+              <span className="uppercase">{blog?.categories[0].name}</span>
             </p>
-            {/* <h3 className="p-medium-24 py-2">
-                  {truncateString(blog?.title, 40)}
-                </h3> */}
             <h3 className="p-medium-24 py-2">{blog.title}</h3>
-            {/* <p className="p-medium-18">{truncateString(blog?.excerpt, 80)}</p> */}
-            <p className="p-medium-18">{blog?.excerpt}</p>
+            <p className="p-medium-16">{truncateString(blog?.excerpt, 80)}</p>
             <p className="p-medium-12 pt-2 p-underline lg:hidden">Read more</p>
           </div>
         </div>

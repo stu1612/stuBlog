@@ -163,16 +163,24 @@ body {
     @apply font-black text-[28px] leading-[36px];
   }
 
-  .p-medium-16 {
-    @apply text-[16px] font-medium leading-[24px];
+  .p-medium-24 {
+    @apply font-medium text-[24px] leading-[36px];
+  }
+
+  .p-medium-20 {
+    @apply text-[20px] font-medium leading-[30px];
   }
 
   .p-medium-18 {
     @apply text-[18px] font-medium leading-[28px];
   }
 
-  .p-medium-20 {
-    @apply text-[20px] font-medium leading-[30px];
+  .p-medium-16 {
+    @apply text-[16px] font-medium leading-[24px];
+  }
+
+  .p-medium-12 {
+    @apply text-[12px] font-medium leading-[20px];
   }
 
   /* bg gradients */
