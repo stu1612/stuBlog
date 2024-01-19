@@ -78,6 +78,41 @@ body {
   font-family: var(--font-lato);
 }
 
+.grid-blogs {
+  grid-area: blogs;
+  width: full;
+}
+
+.grid-aside-content {
+  grid-area: grid-content;
+  width: full;
+}
+
+.grid-aside-projects {
+  grid-area: projects;
+  width: full;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-areas:
+    "grid-content"
+    "blogs"
+    "projects";
+}
+
+@media screen and (min-width: 1024px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "blogs blogs grid-content"
+      "blogs blogs projects";
+  }
+}
+
 .nav {
   position: relative;
 }
@@ -99,7 +134,7 @@ body {
   }
 }
 
-@layer utlities {
+@layer utilities {
   .wrapper {
     @apply w-full max-w-7xl;
   }
@@ -112,7 +147,21 @@ body {
     @apply underline underline-offset-4;
   }
 
-  /* TYPOGRAPHY */
+  .clip-text {
+    @apply text-transparent bg-clip-text;
+  }
+
+  .h1-bold {
+    @apply font-black text-[40px] leading-[48px] lg:text-[48px] lg:leading-[60px]  xl:text-[58px] xl:leading-[74px];
+  }
+
+  .h2-bold {
+    @apply font-black text-[32px] leading-[40px] lg:text-[36px] lg:leading-[44px] xl:text-[40px] xl:leading-[48px];
+  }
+
+  .h5-bold {
+    @apply font-black text-[28px] leading-[36px];
+  }
 
   .p-medium-16 {
     @apply text-[16px] font-medium leading-[24px];
@@ -121,13 +170,29 @@ body {
   .p-medium-18 {
     @apply text-[18px] font-medium leading-[28px];
   }
-}
 
-/* @layer base {
-  * {
-    @apply border-border;
+  .p-medium-20 {
+    @apply text-[20px] font-medium leading-[30px];
   }
-  body {
-    @apply bg-background text-foreground;
+
+  /* bg gradients */
+  .bg-emerald {
+    @apply bg-gradient-to-r from-emerald-500 to-lime-600;
   }
-} */
+
+  .bg-hyper {
+    @apply bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500;
+  }
+
+  .bg-sky {
+    @apply bg-gradient-to-b from-sky-400 to-sky-200;
+  }
+
+  .bg-ocean {
+    @apply bg-gradient-to-r from-rose-100 to-teal-100;
+  }
+
+  .bg-midnight {
+    @apply bg-gradient-to-tl from-blue-700 via-blue-800 to-gray-900;
+  }
+}
