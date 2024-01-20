@@ -20,7 +20,7 @@ import {
 
 const ITEMS_PER_PAGE = 3;
 
-export default function PaginatedPosts({ data }: any) {
+export default function PaginatedBlogs({ data }: any) {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [posts, setPosts] = useState<Blog[]>([]);
 
