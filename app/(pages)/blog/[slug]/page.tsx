@@ -14,10 +14,11 @@ type ParamsProp = {
   };
 };
 
+const query = GET_BLOG_BY_SLUG;
+
 export async function generateMetadata({
   params,
 }: ParamsProp): Promise<Metadata> {
-  // properties
   const { slug } = params;
 
   const { data } = await getClient().query({
@@ -35,15 +36,30 @@ export async function generateMetadata({
   // const previousImages = (await parent).openGraph?.images || [];
 
   return {
-    title: title,
-    description: excerpt,
     openGraph: {
-      images: [image?.url],
+      title: title,
+      description: excerpt,
+      url: typeof window !== "undefined" ? window.location.href : "",
+      images: [
+        {
+          url: image?.url,
+          width: 800,
+          height: 600,
+          alt: title,
+        },
+        {
+          url: image?.url,
+          width: 1800,
+          height: 1600,
+          alt: title,
+        },
+      ],
     },
+    // title: title,
+    // description: excerpt,
+    // images: [image?.url],
   };
 }
-
-const query = GET_BLOG_BY_SLUG;
 
 export default async function Blog({ params }: ParamsProp) {
   // properties
