@@ -5,6 +5,7 @@ import { getClient } from "@/lib/apollo/client";
 import { GET_BLOG_BY_SLUG } from "@/lib/services";
 
 import CMSRichText from "@/components/layout/CMSRichText";
+import WebShare from "@/components/shared/WebShare";
 
 type ParamsProp = {
   params: {
@@ -47,9 +48,9 @@ export default async function Blog({ params }: ParamsProp) {
               alt={title}
             />
           </div>
-          {/* <div className="flex justify-center items-center  gap-4">
-            <ShareButton />
-          </div> */}
+          <div className="flex justify-center items-center  gap-4">
+            <WebShare data={data} />
+          </div>
         </div>
       </section>
       <section>
