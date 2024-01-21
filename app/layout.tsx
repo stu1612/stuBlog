@@ -11,13 +11,100 @@ const lato = Lato({
 });
 
 export const metadata: Metadata = {
-  title: "stuBlog | Frontend and Full Stack Web Development Blog",
-  description:
-    "Frontend and FullStack Web Development Blog for aspiring developers wanting to learn interesting wed development trends.",
+  openGraph: {
+    title: "stuBlog | Frontend and Full Stack Web Development Blog",
+    description:
+      "Frontend and FullStack Web Development Blog for aspiring developers wanting to learn interesting wed development trends.",
+    url: "https://stu-blog-three.vercel.app/",
+    siteName: "stuBlog",
+    locale: "en_US",
+    type: "website",
+  },
+  metadataBase: new URL("https://stu-blog-three.vercel.app/"),
   icons: {
     icon: "/images/logo.png",
   },
+  generator: "Next.js",
+  applicationName: "stuBlog",
+  referrer: "origin-when-cross-origin",
+  keywords: [
+    "Next.js",
+    "React",
+    "Typescript",
+    "TailwindCSS",
+    "Apollo Client",
+    "Shadcdn",
+    "Hygraph CMS",
+  ],
+  authors: [
+    { name: "Stuart Bolderson" },
+    { url: "https://stu-blog-three.vercel.app/" },
+  ],
+  creator: "Stuart Bolderson",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: "/",
+    languages: {
+      "en-US": "/en-US",
+      "se-SE": "/se-SE",
+    },
+  },
+  robots: {
+    index: false,
+    follow: true,
+    nocache: true,
+    googleBot: {
+      index: true,
+      follow: false,
+      noimageindex: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
+// export const metadata: Metadata = {
+//   metadataBase: new URL("https://stu-blog-three.vercel.app/"),
+//   title: "stuBlog | Frontend and Full Stack Web Development Blog",
+//   description:
+//     "Frontend and FullStack Web Development Blog for aspiring developers wanting to learn interesting wed development trends.",
+//   icons: {
+//     icon: "/images/logo.png",
+//   },
+//   generator: "Next.js",
+//   applicationName: "stuBlog",
+//   referrer: "origin-when-cross-origin",
+//   keywords: [
+//     "Next.js",
+//     "React",
+//     "Typescript",
+//     "TailwindCSS",
+//     "Apollo Client",
+//     "Shadcdn",
+//     "Hygraph CMS",
+//   ],
+//   authors: [
+//     { name: "Stuart Bolderson" },
+//     { url: "https://stu-blog-three.vercel.app/" },
+//   ],
+//   creator: "Stuart Bolderson",
+//   formatDetection: {
+//     email: false,
+//     address: false,
+//     telephone: false,
+//   },
+//   alternates: {
+//     canonical: "/",
+//     languages: {
+//       "en-US": "/en-US",
+//       "se-SE": "/se-SE",
+//     },
+//   },
+// };
 
 export default function RootLayout({
   children,

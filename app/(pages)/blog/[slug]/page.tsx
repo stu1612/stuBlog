@@ -1,5 +1,6 @@
 // npm
 import Image from "next/image";
+import type { Metadata, ResolvingMetadata } from "next";
 
 import { getClient } from "@/lib/apollo/client";
 import { GET_BLOG_BY_SLUG } from "@/lib/services";
@@ -12,6 +13,35 @@ type ParamsProp = {
     slug: string;
   };
 };
+
+export async function generateMetadata({
+  params,
+}: ParamsProp): Promise<Metadata> {
+  // properties
+  const { slug } = params;
+
+  const { data } = await getClient().query({
+    query,
+    variables: { slug },
+    context: {
+      fetchOptions: {
+        next: { revalidate: 5 },
+      },
+    },
+  });
+
+  const { title, image, excerpt } = data?.post;
+
+  // const previousImages = (await parent).openGraph?.images || [];
+
+  return {
+    title: title,
+    description: excerpt,
+    openGraph: {
+      images: [image?.url],
+    },
+  };
+}
 
 const query = GET_BLOG_BY_SLUG;
 
