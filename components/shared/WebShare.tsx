@@ -6,7 +6,8 @@ export default function WebShare({ data }: any) {
   const onHandleShare = async () => {
     try {
       if (navigator.share) {
-        const imageUrl = data?.post?.image?.url;
+        // const imageUrl = data?.post?.image?.url;
+        const imageUrl = "/images/logo.png";
 
         if (imageUrl) {
           const response = await fetch(imageUrl);
