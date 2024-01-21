@@ -77,7 +77,7 @@ export const GET_CATEGORIES = gql`
   }
 `;
 
-export const GET_POSTS_BY_CATEGORY: DocumentNode = gql`
+export const GET_BLOGS_BY_CATEGORY: DocumentNode = gql`
   query PostsByCategory($slug: String!) {
     posts(where: { categories_some: { slug: $slug } }) {
       createdAt

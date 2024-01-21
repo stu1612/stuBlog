@@ -19,13 +19,11 @@ export default async function Blogs() {
   });
   return (
     <ContentWrapper>
-      <div className="grid-blogs">
-        <div>
-          <SubTitle title="All Blog Articles" style="clip-text bg-hyper" />
-        </div>
+      <div className="grid-blogs my-6 lg:my-0">
+        <SubTitle title="All Blog Articles" style="clip-text bg-hyper" />
         <PaginatedBlogs data={data} />
       </div>
-      <aside className="grid-aside-content ">
+      <aside className="grid-aside-content my-6 lg:my-0">
         <SubTitle title="Categories" style="clip-text bg-hyper" />
         <Categories />
       </aside>

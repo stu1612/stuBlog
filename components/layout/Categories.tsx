@@ -21,23 +21,14 @@ export default async function Categories() {
   });
   return (
     <section className="flex flex-wrap gap-5">
-      {/* <Link href={`/blogs/`} className="btn btn-sm btn-primary">
-        <small className="p-medium-16">Blogs</small>
-      </Link> */}
       <Link href={`/blogs/`} className={badgeVariants({ variant: "default" })}>
         Blogs
       </Link>
       {data?.categories?.map((category: Category) => (
-        // <Link
-        //   href={`/blogs/${category?.slug}`}
-        //   key={category.id}
-        //   className="btn btn-sm btn-primary"
-        // >
-        //   <small className="p-medium-16">{category?.name}</small>
-        // </Link>
         <Link
           href={`/blogs/${category?.slug}`}
           className={badgeVariants({ variant: "secondary" })}
+          key={category?.id}
         >
           {category?.name}
         </Link>
