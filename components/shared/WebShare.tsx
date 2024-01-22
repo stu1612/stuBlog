@@ -11,7 +11,17 @@ export default function WebShare({ data }: any) {
         if (imageUrl) {
           const response = await fetch(imageUrl);
           const blob = await response.blob();
-          const file = new File([blob], "image.jpg", { type: "image/jpeg" });
+
+          // Extract the file extension from the image URL - test whether linkedn images load better when sharing
+          const fileExtension = imageUrl.substring(
+            imageUrl.lastIndexOf(".") + 1
+          );
+          const fileName = `image.${fileExtension}`;
+
+          // const file = new File([blob], "image.jpg", { type: "image/jpeg" });
+          const file = new File([blob], fileName, {
+            type: `image/${fileExtension}`,
+          });
 
           await navigator.share({
             title: data?.post?.title,
