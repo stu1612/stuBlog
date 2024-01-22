@@ -19,6 +19,19 @@ export const metadata: Metadata = {
     siteName: "stuBlog",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/images/computer.jpg", // Must be an absolute URL
+        width: 800,
+        height: 600,
+      },
+      {
+        url: "/images/computer.jpg", // Must be an absolute URL
+        width: 1800,
+        height: 1600,
+        alt: "Computer",
+      },
+    ],
   },
   metadataBase: new URL("https://stu-blog-three.vercel.app/"),
   icons: {
@@ -65,6 +78,13 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "stuBlog | Frontend and Full Stack Web Development Blog",
+    description:
+      "Frontend and FullStack Web Development Blog for aspiring developers wanting to learn interesting wed development trends.",
+    images: ["/images/computer.jpg"], // Must be an absolute URL
   },
 };
 // export const metadata: Metadata = {

@@ -31,33 +31,25 @@ export async function generateMetadata({
     },
   });
 
+  console.log(data);
+
   const { title, image, excerpt } = data?.post;
 
   // const previousImages = (await parent).openGraph?.images || [];
 
   return {
+    title: title,
+    description: excerpt,
+    // url: typeof window !== "undefined" ? window.location.href : "",
     openGraph: {
+      images: [image?.url],
+    },
+    twitter: {
+      card: "summary_large_image",
       title: title,
       description: excerpt,
-      url: typeof window !== "undefined" ? window.location.href : "",
-      images: [
-        {
-          url: image?.url,
-          width: 800,
-          height: 600,
-          alt: title,
-        },
-        {
-          url: image?.url,
-          width: 1800,
-          height: 1600,
-          alt: title,
-        },
-      ],
+      images: [image?.url], // Must be an absolute URL
     },
-    // title: title,
-    // description: excerpt,
-    // images: [image?.url],
   };
 }
 
