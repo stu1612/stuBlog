@@ -5,7 +5,7 @@ export default function Hero() {
     <section className="h-auto">
       <div className="my-10 lg:my-20">
         <h1 className="h5-bold md:h1-bold lg:pr-8">
-          Welcome to stuBlog! Web Dev blog covering a range of{" "}
+          Welcome to stuBlog #1! Web Dev blog covering a range of{" "}
           <span className="clip-text bg-hyper">frontend</span> and{" "}
           <span className="clip-text bg-emerald">fullstack</span> topics{" "}
         </h1>

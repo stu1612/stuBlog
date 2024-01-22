@@ -42,7 +42,23 @@ export async function generateMetadata({
     description: excerpt,
     // url: typeof window !== "undefined" ? window.location.href : "",
     openGraph: {
-      images: [image?.url],
+      title: title,
+      description: excerpt,
+      url: typeof window !== "undefined" ? window.location.href : "",
+      images: [
+        {
+          url: image?.url,
+          width: 800,
+          height: 600,
+          alt: title,
+        },
+        {
+          url: image?.url,
+          width: 1800,
+          height: 1600,
+          alt: title,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
