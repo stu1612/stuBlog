@@ -11,32 +11,12 @@ const lato = Lato({
 });
 
 export const metadata: Metadata = {
-  openGraph: {
-    title: "stuBlog | Frontend and Full Stack Web Development Blog",
-    description:
-      "Frontend and FullStack Web Development Blog for aspiring developers wanting to learn interesting wed development trends.",
-    url: "https://stu-blog-three.vercel.app/",
-    siteName: "stuBlog",
-    locale: "en_US",
-    type: "website",
-    images: [
-      {
-        url: "/images/computer.jpg", // Must be an absolute URL
-        width: 800,
-        height: 600,
-      },
-      {
-        url: "/images/computer.jpg", // Must be an absolute URL
-        width: 1800,
-        height: 1600,
-        alt: "Computer",
-      },
-    ],
+  title: {
+    template: "%s | stuBlog",
+    default: "stuBlog",
   },
-  metadataBase: new URL("https://stu-blog-three.vercel.app/"),
-  icons: {
-    icon: "/images/logo.png",
-  },
+  description:
+    "Frontend and FullStack Web Development Blog for aspiring developers wanting to learn interesting wed development trends.",
   generator: "Next.js",
   applicationName: "stuBlog",
   referrer: "origin-when-cross-origin",
@@ -59,6 +39,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
+  metadataBase: new URL("https://stu-blog-three.vercel.app/"),
   alternates: {
     canonical: "/",
     languages: {
@@ -79,52 +60,53 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  icons: {
+    icon: "/images/logo_48.png",
+    shortcut: "/images/logo_48.png",
+    apple: "/images/logo_48.png",
+  },
   twitter: {
     card: "summary_large_image",
     title: "stuBlog | Frontend and Full Stack Web Development Blog",
     description:
       "Frontend and FullStack Web Development Blog for aspiring developers wanting to learn interesting wed development trends.",
-    images: ["/images/computer.jpg"], // Must be an absolute URL
+    images: {
+      url: "/images/computer.jpg",
+      alt: "Computer screen with a web devlopment blog article",
+    },
+  },
+  verification: {
+    google: "google",
+    yandex: "yandex",
+    yahoo: "yahoo",
+    other: {
+      me: ["boldersonstu@gmail.com", "my-link"],
+    },
+  },
+
+  openGraph: {
+    title: "stuBlog | Frontend and Full Stack Web Development Blog",
+    description:
+      "Frontend and FullStack Web Development Blog for aspiring developers wanting to learn interesting wed development trends.",
+    url: "https://stu-blog-three.vercel.app/",
+    siteName: "stuBlog",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "/images/computer.jpg", // Must be an absolute URL
+        width: 800,
+        height: 600,
+      },
+      {
+        url: "/images/computer.jpg", // Must be an absolute URL
+        width: 1800,
+        height: 1600,
+        alt: "Computer",
+      },
+    ],
   },
 };
-// export const metadata: Metadata = {
-//   metadataBase: new URL("https://stu-blog-three.vercel.app/"),
-//   title: "stuBlog | Frontend and Full Stack Web Development Blog",
-//   description:
-//     "Frontend and FullStack Web Development Blog for aspiring developers wanting to learn interesting wed development trends.",
-//   icons: {
-//     icon: "/images/logo.png",
-//   },
-//   generator: "Next.js",
-//   applicationName: "stuBlog",
-//   referrer: "origin-when-cross-origin",
-//   keywords: [
-//     "Next.js",
-//     "React",
-//     "Typescript",
-//     "TailwindCSS",
-//     "Apollo Client",
-//     "Shadcdn",
-//     "Hygraph CMS",
-//   ],
-//   authors: [
-//     { name: "Stuart Bolderson" },
-//     { url: "https://stu-blog-three.vercel.app/" },
-//   ],
-//   creator: "Stuart Bolderson",
-//   formatDetection: {
-//     email: false,
-//     address: false,
-//     telephone: false,
-//   },
-//   alternates: {
-//     canonical: "/",
-//     languages: {
-//       "en-US": "/en-US",
-//       "se-SE": "/se-SE",
-//     },
-//   },
-// };
 
 export default function RootLayout({
   children,

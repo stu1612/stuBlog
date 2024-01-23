@@ -11,7 +11,7 @@ export const GET_FEATURED_BLOGS: DocumentNode = gql`
       title
       updatedAt
       image {
-        url
+        url(transformation: { image: { resize: { height: 600, width: 600 } } })
       }
       categories {
         id

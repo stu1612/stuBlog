@@ -31,19 +31,19 @@ export async function generateMetadata({
     },
   });
 
-  console.log(data);
-
-  const { title, image, excerpt } = data?.post;
+  const { id, title, image, createdAt, excerpt } = data?.post;
 
   // const previousImages = (await parent).openGraph?.images || [];
 
   return {
-    title: title,
+    title: `stuBlog | ${title}`,
     description: excerpt,
-    // url: typeof window !== "undefined" ? window.location.href : "",
     openGraph: {
-      title: title,
+      title: `stuBlog | ${title}`,
       description: excerpt,
+      type: "article",
+      publishedTime: createdAt,
+      authors: ["Stuart Bolderson"],
       url: typeof window !== "undefined" ? window.location.href : "",
       images: [
         {
@@ -64,7 +64,9 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: title,
       description: excerpt,
-      images: [image?.url], // Must be an absolute URL
+      creator: "Stuart Bolderson",
+      creatorId: id,
+      images: [image?.url],
     },
   };
 }

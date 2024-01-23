@@ -1,3 +1,5 @@
+import { Metadata } from "next";
+
 import { getClient } from "@/lib/apollo/client";
 import { GET_ALL_BLOGS } from "@/lib/services";
 
@@ -7,6 +9,10 @@ import PaginatedBlogs from "@/components/layout/PaginatedBlogs";
 import Categories from "@/components/layout/Categories";
 
 const query = GET_ALL_BLOGS;
+
+export const metadata: Metadata = {
+  title: "Blogs",
+};
 
 export default async function Blogs() {
   const { data } = await getClient().query({
